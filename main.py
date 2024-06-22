@@ -6,7 +6,6 @@ VTable = []
 cipherX = []
 cipherY = []
 cipherText = []
-plainText = []
 spaceSpots = []
 
 
@@ -17,27 +16,15 @@ def reinsertSpaces(text):
 
 
 def encrypt(keystream, plaintext):
-    for z in keystream:
-        for x in range(len(VTable[0])):
-            if z == VTable[0][x]:
-                cipherX.append(x)
-    for a in plaintext:
-        for y in range(len(VTable)):
-            if a == VTable[y][0]:
-                cipherY.append(y)
-    for x in range(len(cipherX)):
-        cipherText.append(VTable[cipherX[x]][cipherY[x]])
+    for x in range(len(keystream)):
+        cipherText.append(alphabet[(alphabet.index(keystream[x]) + alphabet.index(plaintext[x])) % 26])
     print(''.join(reinsertSpaces(cipherText)))
 
 
 def decrypt(keystream, hiddenText):
     for x in range(len(keystream)):
-        for y in range(len(VTable[0])):
-            if keystream[x] == VTable[0][y]:
-                for z in range(len(VTable[y])):
-                    if VTable[z][y] == hiddenText[x]:
-                        plainText.append(VTable[z][0])
-    print(''.join(reinsertSpaces(plainText)))
+        cipherText.append(alphabet[(alphabet.index(hiddenText[x]) - alphabet.index(keystream[x])) % 26])
+    print(''.join(reinsertSpaces(cipherText)))
 
 
 def generateTable(keyWord):
