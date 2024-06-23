@@ -5,9 +5,9 @@ The Cipher requires a key to encrypt the plaintext, which is then further encryp
 
 ![Vigenere-Square](https://higherlogicdownload.s3.amazonaws.com/IMWUC/UploadedImages/92757287-d116-4157-b004-c2a0aba1b048/Vigenere_square.jpg)<br />
 
-The Vigenere cipher firstly assigns the plaintext a keystream by replacing letters of the plaintext with letters of the keystream<br />
+The Vigenere cipher firstly assigns the plaintext a keystream by replacing letters of the plaintext with letters of the keyword<br />
 
-### Plaintext: HELLO WORLD<br />Key: KEY<br />Keystream: KEYKE YKEYK<br />
+### Plaintext: HELLO WORLD<br />Keyword: KEY<br />Keystream: KEYKE YKEYK<br />
 
 Then, by using letters from the plaintext and keystream, the cipher finds at which point the letters from the plaintext and keystream intersect and selects that letter as the letter in the encrypted output<br />
 
