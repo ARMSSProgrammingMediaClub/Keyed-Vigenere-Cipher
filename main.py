@@ -1,5 +1,3 @@
-# Made by Nick H
-
 import string
 
 alphabet = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'.split()
@@ -24,8 +22,7 @@ def generateTable(keyWord):
     for x in range(len(keyWord)):
         keyedAlphabet.append(keyWord[-x-1])
         alphabet.insert(0, alphabet.pop(alphabet.index(keyedAlphabet[x])))
-    for x in alphabet:
-        VTable.append(alphabet[alphabet.index(x):] + alphabet[:alphabet.index(x)])
+        VTable.append(alphabet)
 
 
 def keystreamGen(keyWord, text, mode):
