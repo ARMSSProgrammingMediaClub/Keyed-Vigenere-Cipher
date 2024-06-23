@@ -28,7 +28,6 @@ def keystreamGen(keyWord, text, mode):
     for x in range(len(text)):
         if len(keystream) != len(text):
             keystream.append(keyWord[x % 3])
-
     if mode:
         encrypt(keystream, text)
     else:
