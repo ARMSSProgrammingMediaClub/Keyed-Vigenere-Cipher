@@ -21,8 +21,7 @@ def decrypt(keystream, hiddenText):
 def generateTable(keyWord):
     for x in range(len(keyWord)):
         keyedAlphabet.append(keyWord[-x-1])
-    for x in keyedAlphabet:
-        alphabet.insert(0, alphabet.pop(alphabet.index(x)))
+        alphabet.insert(0, alphabet.pop(alphabet.index(keyedAlphabet[x])))
     for x in alphabet:
         VTable.append(alphabet[alphabet.index(x):] + alphabet[:alphabet.index(x)])
 
